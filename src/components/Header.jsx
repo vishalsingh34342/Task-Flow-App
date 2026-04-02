@@ -1,9 +1,15 @@
 import React from 'react'
+import { Sparkles, TrendingUp } from 'lucide-react';
+
 
 const Header = () => {
-  return (
-    <div>Header</div>
-  )
+    return (
+        <>
+           
+
+
+        </>
+    )
 }
 
 export default Header

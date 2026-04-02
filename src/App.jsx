@@ -10,12 +10,12 @@ import Clearbutton from './components/Clearbutton'
 const App = () => {
   return (
     <>
-      <div>
+      <div className='min-h-screen bg-linear-to-br from-indigo-950 via-purple-950 to-pink-950 p-3 sm:p-6 relative overflow-hidden'>
         <Animate />
         <Notification />
 
 
-        <div>
+        <div className='max-w-3xl mx-auto relative z-10'>
           <Header />
 
           <Statsgrid />
