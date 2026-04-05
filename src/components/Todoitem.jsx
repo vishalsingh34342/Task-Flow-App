@@ -1,6 +1,6 @@
 import React from 'react'
 import { Check, Save, X, Edit2, Trash2 } from 'lucide-react'
-const Todoitem = ({ todo, index
+const Todoitem = ({ todo, index,
   editingId,
   editText,
   onToggle,
