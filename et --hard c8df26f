@@ -1,0 +1,20 @@
+[33m090493a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: rebase (abort): returning to refs/heads/main
+[33m090493a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{1}: rebase (abort): returning to refs/heads/main
+[33mc8df26f[m HEAD@{2}: commit: Added input functionality and todo creation logic
+[33mba7aaab[m HEAD@{3}: commit (amend): Added notification component UI structure
+[33me6f63b5[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{4}: commit: Added notification component UI structure
+[33m699372d[m HEAD@{5}: commit: Added empty state UI when no tasks are present
+[33m98f97b8[m HEAD@{6}: commit: Added animated background with blobs and floating particles
+[33m6093b35[m HEAD@{7}: rebase (finish): returning to refs/heads/main
+[33m6093b35[m HEAD@{8}: pull origin main --rebase (start): checkout 6093b35e23a73f24d877d468e548e6cd11935236
+[33m090493a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{9}: commit: Added TodoItem component UI with edit and action controls
+[33m5f25982[m HEAD@{10}: commit: Added TodoItem component UI with edit and action controls
+[33mb067f8d[m HEAD@{11}: commit: Added todolist component structure
+[33mac0618e[m HEAD@{12}: commit: Added Input component UI structure
+[33m961505b[m HEAD@{13}: commit: Added StatsGrid component UI
+[33m5b80489[m HEAD@{14}: commit: Completed Header component with UI and progress bar
+[33m21b8874[m HEAD@{15}: commit: setup main layout with all core components
+[33me974a02[m HEAD@{16}: commit: Initial project setup
+[33maa440d1[m HEAD@{17}: commit (merge): Resolved merge conflict
+[33mc0ce90c[m HEAD@{18}: Branch: renamed refs/heads/master to refs/heads/main
+[33mc0ce90c[m HEAD@{20}: commit (initial): Intial setup

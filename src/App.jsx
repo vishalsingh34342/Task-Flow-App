@@ -56,8 +56,11 @@ const App = () => {
   }
   // key press down
   const handleKeyPress = (e) => {
-    if (e.key === "Enter");
-    handleAddTodo()
+    if (e.key === "Enter") {
+      handleAddTodo()
+
+    }
+
   }
 
 
@@ -83,7 +86,7 @@ const App = () => {
 
           <Statsgrid />
 
-          <Input value={input} onChange={(e) => setInput(e.target.value)} onAdd={handleAddTodo} onKeyPress={handleKeyPress}/>
+          <Input value={input} onChange={(e) => setInput(e.target.value)} onAdd={handleAddTodo} onKeyPress={handleKeyPress} />
 
           <Todolist todos={todos} />
 
