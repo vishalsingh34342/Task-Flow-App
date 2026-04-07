@@ -1,10 +1,10 @@
 import React from 'react'
 import { CheckCircle, AlertCircle, X } from 'lucide-react';
 
-const Notification = () => {
+const Notification = ({ notification, onClose }) => {
   // TODO: connect this with state later
-  let notification = null;
-  let onClose = () => { };
+  // let notification = null;
+  // let onClose = () => { };
 
   if (!notification) return null
   return (
