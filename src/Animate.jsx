@@ -26,7 +26,7 @@ const Animate = () => {
 
 
       <div className='absolute inset-0 overflow-hidden pointer-events-none'>
-        {Array.from({ length: 20 }).map((_, i) => (
+        {Array.from({ length: 100 }).map((_, i) => (
 
           <div key={i} className='absolute w-1 h-1 bg-white rounded-full opacity-20' style={{
             left: `${Math.random() * 100}%`,
