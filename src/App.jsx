@@ -17,7 +17,7 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("")
   const [notification, setnotification] = useState(null)
-  const [edtingId, setEdtingid] = useState(null)
+  const [editingId, setEditingId] = useState(null)
   const [editText, setEditText] = useState("")
   const [hasLoaded, setHasLoaded] = useState(false);
 
@@ -63,10 +63,40 @@ const App = () => {
 
   }
 
+  //edit key press
+  const handleEditKeyPress = (e, id) => {
+    if (e.key === "Enter") {
+      saveEdit(id)
+    }
+    else if (e.key === "Escape") {
+      cancelEdit()
+    }
+  }
+
+  //start edit
+  const startEditing = (id, text) => {
+    setEditingId(id);
+    setEditText(text)
+  }
+
+
 
 
 
   //update todo
+  const saveEdit = (id) => {
+    if (!editText.trim()) return;
+    setTodos(todos.map((todo) => (todo.id === id ? { ...todo, text: editText } : todo)))
+    setEditText(null)
+    setEditingId(null)
+    playSound("update")
+    showNotification("task updated successfully")
+  }
+  //cancel edit
+  const cancelEdit = () => {
+    setEditText("")
+    setEditingId(null)
+  }
 
 
 
@@ -94,7 +124,7 @@ const App = () => {
 
           <Input value={input} onChange={(e) => setInput(e.target.value)} onAdd={handleAddTodo} onKeyPress={handleKeyPress} />
 
-          <Todolist todos={todos} onDelete={deleteTodo} />
+          <Todolist todos={todos} onDelete={deleteTodo} onStartEdit={startEditing} onSaveEdit={saveEdit} onCancelEdit={cancelEdit} editingId={editingId} editText={editText} onEditTextChange={(e) => setEditText(e.target.value)} onEditKeyPress={handleEditKeyPress} />
 
           <Clearbutton />
 
