@@ -31,7 +31,7 @@ const Todoitem = ({ todo, index,
           <input type="text" value={editText} onChange={onEditTextChange} onKeyDown={(e) => onEditKeyPress(e, todo.id)} className=' flex-1 px-3 py-1.5 bg-white/10 text-white placeholder-white/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500
           font-medium text-sm border-white/10 ' autoFocus />
         </>) : (<>
-          <span className={`flex-1 font-medium text-sm translate-full duration-300 ${todo.completed ? "line-through text-white/40" : "text-white"}`}>{todo.text}</span></>)}
+          <span className={`flex-1 font-medium text-sm  duration-300 ${todo.completed ? "line-through text-white/40" : "text-white"}`}>{todo.text}</span></>)}
 
 
         <div className='flex gap-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 sm:translate-x-2 sm:group-hover:translate-x-0'>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Animate from './Animate'
 import Notification from './components/Notification'
 import Header from './components/Header'
@@ -6,9 +6,9 @@ import Statsgrid from './components/Statsgrid'
 import Input from './components/Input'
 import Todolist from './components/Todolist'
 import Clearbutton from './components/Clearbutton'
+import { playSound } from './components/Playsound'
 
 
-const playSound = (data) => { }
 
 const App = () => {
   const STORAGE_KEY = "todos"
@@ -22,11 +22,44 @@ const App = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
 
 
+  //get from local storage
+  useEffect(() => {
+    try {
+      const data = localStorage.getItem(STORAGE_KEY)
+      if (data) {
+        setTodos(JSON.parse(data))
+      }
+    } catch (error) {
+      console.log("load error :", error);
 
-  //get from loacl storage
+    }
+    finally {
+      setHasLoaded(true)
+    }
+
+
+  }, [])
+
+
 
 
   //save to local storage
+  useEffect(() => {
+    if (!hasLoaded) return;
+
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
+    } catch (error) {
+      console.log("save error :", error);
+
+    }
+
+
+  }, [todos, hasLoaded])
+
+
+
+
 
 
   //show notification
@@ -60,7 +93,7 @@ const App = () => {
     setTodos(todos.map((todo) => todo.id === id ? { ...todo, completed: !todo.completed } : todo));
     const todo = todos.find((t) => t.id === id)
     if (!todo.completed) {
-      playSound("completed")
+      playSound("complete")
       showNotification("🎉 Great job! task completed")
     }
   }
@@ -116,7 +149,7 @@ const App = () => {
 
   const clearCompleted = () => {
     setTodos(todos.filter((t) => !t.completed))
-    playSound('deleted')
+    playSound('delete')
     showNotification("🗑️ task deleted ", "info")
 
 
@@ -139,7 +172,7 @@ const App = () => {
         <div className='max-w-3xl mx-auto relative z-10'>
           <Header activeTodos={activeTodos} progress={progress} totalTodos={todos.length} />
 
-          <Statsgrid activeTodos={activeTodos}  totalTodos={todos.length} completedTodos={completdTodos} />
+          <Statsgrid activeTodos={activeTodos} totalTodos={todos.length} completedTodos={completdTodos} />
 
           <Input value={input} onChange={(e) => setInput(e.target.value)} onAdd={handleAddTodo} onKeyPress={handleKeyPress} />
 
