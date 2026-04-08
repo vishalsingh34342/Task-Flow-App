@@ -54,6 +54,16 @@ const App = () => {
 
 
   }
+
+  //on toggel
+  const toggleTodo = (id) => {
+    setTodos(todos.map((todo) => todo.id === id ? { ...todo, completed: !todo.completed } : todo));
+    const todo = todos.find((t) => t.id === id)
+    if (!todo.completed) {
+      playSound("completed")
+      showNotification("🎉 Great job! task completed")
+    }
+  }
   // key press down
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -124,7 +134,7 @@ const App = () => {
 
           <Input value={input} onChange={(e) => setInput(e.target.value)} onAdd={handleAddTodo} onKeyPress={handleKeyPress} />
 
-          <Todolist todos={todos} onDelete={deleteTodo} onStartEdit={startEditing} onSaveEdit={saveEdit} onCancelEdit={cancelEdit} editingId={editingId} editText={editText} onEditTextChange={(e) => setEditText(e.target.value)} onEditKeyPress={handleEditKeyPress} />
+          <Todolist todos={todos} onDelete={deleteTodo} onStartEdit={startEditing} onSaveEdit={saveEdit} onCancelEdit={cancelEdit} editingId={editingId} editText={editText} onEditTextChange={(e) => setEditText(e.target.value)} onEditKeyPress={handleEditKeyPress} onToggle={toggleTodo} />
 
           <Clearbutton />
 
