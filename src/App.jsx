@@ -123,6 +123,10 @@ const App = () => {
 
   }
 
+  const activeTodos = todos.filter((t) => !t.completed).length;
+  const completdTodos = todos.filter(t => t.completed).length;
+  const progress = todos.length > 0 ? (completdTodos / todos.length) * 100 : 0;
+
 
 
   return (
@@ -133,15 +137,15 @@ const App = () => {
 
 
         <div className='max-w-3xl mx-auto relative z-10'>
-          <Header />
+          <Header activeTodos={activeTodos} progress={progress} totalTodos={todos.length} />
 
-          <Statsgrid />
+          <Statsgrid activeTodos={activeTodos}  totalTodos={todos.length} completedTodos={completdTodos} />
 
           <Input value={input} onChange={(e) => setInput(e.target.value)} onAdd={handleAddTodo} onKeyPress={handleKeyPress} />
 
           <Todolist todos={todos} onDelete={deleteTodo} onStartEdit={startEditing} onSaveEdit={saveEdit} onCancelEdit={cancelEdit} editingId={editingId} editText={editText} onEditTextChange={(e) => setEditText(e.target.value)} onEditKeyPress={handleEditKeyPress} onToggle={toggleTodo} />
 
-          <Clearbutton onClick={clearCompleted} />
+          <Clearbutton onClick={clearCompleted} completedTodos={completdTodos} />
 
 
 

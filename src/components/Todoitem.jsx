@@ -23,8 +23,8 @@ const Todoitem = ({ todo, index,
 
         <button onClick={() => onToggle(todo.id)} className={` w-6 h-6 rounded-lg flex items-center justify-center 
   transition-all duration-300 transform 
-  opacity-100 sm:opacity-0 sm:group-hover:opacity-100
-  hover:scale-110 active:scale-90 ${todo.completed ? "bg-linear-to-br from-emerald-400 to-teal-500 border-emerald-400 shadow-lg shadow-emerald-400/50" : "border-white/30 hover:border-violet-400 hover:bg-violet-400/20 active:border-violet-400 active:bg-violet-400/30"}`}>
+  opacity-100 sm:opacity-100 sm:group-hover:opacity-100
+  hover:scale-110 active:scale-90 ${todo.completed ? "bg-gradient-to-br from-emerald-400 to-teal-500 border-emerald-400 shadow-lg shadow-emerald-400/50" : "border-white/30 hover:border-violet-400 hover:bg-violet-400/20 active:border-violet-400 active:bg-violet-400/30"}`}>
           {todo.completed && <Check size={14} className='text-white font-bold' />}</button>
 
         {isEditing ? (<>

@@ -2,9 +2,13 @@ import React from 'react'
 import { Sparkles, TrendingUp } from 'lucide-react';
 
 
-const Header = () => {
-    let progress = 50
-    let activeTodos = 4
+const Header = ({ progress, activeTodos, totalTodos }) => {
+    // let progress = 50
+    // let activeTodos = 4
+    // console.log(progress);
+    console.log(activeTodos);
+
+
     return (
         <>
             <div className='backdrop-blur-2xl bg-white/5 rounded-3xl border-white/10 p-6 mb-4 shadow-2xl'>
@@ -40,7 +44,7 @@ const Header = () => {
                 </div>
 
                 {/* Progress bar */}
-                <div className='relative'>
+                {totalTodos > 0 && <div className='relative'>
                     <div className='flex justify-between items-center'>
                         <span className='text-white/70 text-xs font-semibold'>Progress</span>
                         <span className='text-white font-bold text-sm'>{Math.round(progress)}</span>
@@ -58,7 +62,8 @@ const Header = () => {
 
                     </div>
 
-                </div>
+                </div>}
+
 
             </div>
 
