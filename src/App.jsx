@@ -89,10 +89,6 @@ const App = () => {
     setEditText(text)
   }
 
-
-
-
-
   //update todo
   const saveEdit = (id) => {
     if (!editText.trim()) return;
@@ -108,13 +104,22 @@ const App = () => {
     setEditingId(null)
   }
 
-
-
   //delete todo
   const deleteTodo = (id) => {
     setTodos(todos.filter((todos) => todos.id !== id))
     playSound("delete")
     showNotification("🗑️ task deleted ", "info")
+
+  }
+
+  //clear all completed task
+
+  const clearCompleted = () => {
+    setTodos(todos.filter((t) => !t.completed))
+    playSound('deleted')
+    showNotification("🗑️ task deleted ", "info")
+
+
 
   }
 
@@ -136,7 +141,7 @@ const App = () => {
 
           <Todolist todos={todos} onDelete={deleteTodo} onStartEdit={startEditing} onSaveEdit={saveEdit} onCancelEdit={cancelEdit} editingId={editingId} editText={editText} onEditTextChange={(e) => setEditText(e.target.value)} onEditKeyPress={handleEditKeyPress} onToggle={toggleTodo} />
 
-          <Clearbutton />
+          <Clearbutton onClick={clearCompleted} />
 
 
 
