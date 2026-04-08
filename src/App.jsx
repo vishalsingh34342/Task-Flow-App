@@ -71,6 +71,12 @@ const App = () => {
 
 
   //delete todo
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todos) => todos.id !== id))
+    playSound("delete")
+    showNotification("🗑️ task deleted ", "info")
+
+  }
 
 
 
@@ -88,7 +94,7 @@ const App = () => {
 
           <Input value={input} onChange={(e) => setInput(e.target.value)} onAdd={handleAddTodo} onKeyPress={handleKeyPress} />
 
-          <Todolist todos={todos} />
+          <Todolist todos={todos} onDelete={deleteTodo} />
 
           <Clearbutton />
 
