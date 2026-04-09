@@ -9,7 +9,6 @@ import Clearbutton from './components/Clearbutton'
 import { playSound } from './components/Playsound'
 
 
-
 const App = () => {
   const STORAGE_KEY = "todos"
 
@@ -40,9 +39,6 @@ const App = () => {
 
   }, [])
 
-
-
-
   //save to local storage
   useEffect(() => {
     if (!hasLoaded) return;
@@ -56,11 +52,6 @@ const App = () => {
 
 
   }, [todos, hasLoaded])
-
-
-
-
-
 
   //show notification
   const showNotification = (message, type = "success") => {
@@ -164,7 +155,10 @@ const App = () => {
 
   return (
     <>
-      <div className='min-h-screen bg-linear-to-br from-indigo-950 via-purple-950 to-pink-950 p-3 sm:p-6 relative overflow-hidden'>
+      <div className='min-h-screen bg-gradient-to-br from-black via-indigo-950 to-blue-950 p-3 sm:p-6 relative overflow-hidden'>
+
+
+
         <Animate />
         <Notification notification={notification} onClose={() => setnotification(null)} />
 
@@ -191,3 +185,4 @@ const App = () => {
 }
 
 export default App
+// https://task-flow-app-lyart.vercel.app/

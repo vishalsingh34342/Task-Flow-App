@@ -19,7 +19,7 @@ const Todoitem = ({ todo, index,
 
   return (
     <>
-      <div className={`group backdrop-blur-2xl bg-white/5 hover:bg-white/10 rounded-xl p-3 flex items-center gap-3 border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10 ${todo.completed ? "opacity-50" : ""} `} style={{ animation: `slideIn 0.4s ease-out ${index * 0.05}s backwards` }} >
+      <div className={`group backdrop-blur-2xl bg-white/5 hover:bg-white/10 rounded-xl p-3 flex items-center gap-3 border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10 ${todo.completed ? "opacity-50" : ""} `} style={{ animation: `slideIn 0.4s ease-out ${index * 0.05}s backwards` }} >
 
         <button onClick={() => onToggle(todo.id)} className={` w-6 h-6 rounded-lg flex items-center justify-center 
   transition-all duration-300 transform 
@@ -28,7 +28,7 @@ const Todoitem = ({ todo, index,
           {todo.completed && <Check size={14} className='text-white font-bold' />}</button>
 
         {isEditing ? (<>
-          <input type="text" value={editText} onChange={onEditTextChange} onKeyDown={(e) => onEditKeyPress(e, todo.id)} className=' flex-1 px-3 py-1.5 bg-white/10 text-white placeholder-white/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500
+          <input type="text" value={editText} onChange={onEditTextChange} onKeyDown={(e) => onEditKeyPress(e, todo.id)} className=' flex-1 px-3 py-1.5 bg-white/10 text-white placeholder-white/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500
           font-medium text-sm border-white/10 ' autoFocus />
         </>) : (<>
           <span className={`flex-1 font-medium text-sm  duration-300 ${todo.completed ? "line-through text-white/40" : "text-white"}`}>{todo.text}</span></>)}

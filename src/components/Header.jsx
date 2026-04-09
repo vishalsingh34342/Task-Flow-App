@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sparkles, TrendingUp } from 'lucide-react';
+import { Brain, TrendingUp } from 'lucide-react';
 
 
 const Header = ({ progress, activeTodos, totalTodos }) => {
@@ -11,15 +11,15 @@ const Header = ({ progress, activeTodos, totalTodos }) => {
 
     return (
         <>
-            <div className='backdrop-blur-2xl bg-white/5 rounded-3xl border-white/10 p-6 mb-4 shadow-2xl'>
+            <div className='backdrop-blur-2xl bg-gradient-to-br from-white/10 via-indigo-500/10 to-transparent rounded-3xl border border-indigo-400/20 p-6 mb-4 shadow-2xl shadow-indigo-900/30'>
                 <div className='flex items-center justify-between mb-4'>
 
 
                     {/* left side */}
                     <div className='flex items-center gap-3'>
                         <div className='relative '>
-                            <div className='w-12 h-12  bg-linear-to-br from-violet-500 via-purple-500 to-fuchsia-500 rounded-2xl flex items-center justify-center shadow-lg'>
-                                <Sparkles className='text-white' size={24} />
+                            <div className='w-12 h-12  bg-linear-to-br from-blue-500 via-blue-900 to-fuchsia-500 rounded-2xl flex items-center justify-center shadow-lg'>
+                                <Brain className='text-white' size={24} />
                             </div>
 
                             <div className='absolute -top-1  w-4 h-4 bg-emerald-400 rounded-full animate-ping'>
@@ -28,8 +28,11 @@ const Header = ({ progress, activeTodos, totalTodos }) => {
                         </div>
 
                         <div className='    '>
-                            <h1 className='text-3xl font-black text-white tracking-tight'>TaskFlow</h1>
-                            <p className='text-purple-300 text-xs font-medium'>Productivity Reimagined  </p>
+                            <h1 className='text-3xl font-black text-white tracking-tight'>Tasky</h1>
+
+                            <p className='text-cyan-300 text-xs font-medium tracking-normal'>
+                                Organize. Focus. Conquer
+                            </p>
                         </div>
 
                     </div>
